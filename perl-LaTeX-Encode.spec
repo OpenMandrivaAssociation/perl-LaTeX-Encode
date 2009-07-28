@@ -1,21 +1,19 @@
+%define upstream_name    LaTeX-Encode
+%define upstream_version 0.03
 
-%define realname   LaTeX-Encode
-%define version    0.03
-%define release    %mkrel 2
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
-Name:       perl-%{realname}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
-Group:      Development/Perl
 Summary:    Encode LaTeX special chars for typesetting
-Source:     http://www.cpan.org/modules/by-module/LaTeX/%{realname}-%{version}.tar.gz
-Url:        http://search.cpan.org/dist/%{realname}
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: perl-devel
-BuildRequires: perl(Test::More)
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/LaTeX/%{upstream_name}-%{upstream_version}.tar.gz
 
+BuildRequires: perl(Test::More)
 BuildArch: noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module provides a function to encode text that is to be formatted with
@@ -32,7 +30,7 @@ LaTeX 'textcomp' package. If your text includes such characters, you will
 need to include the following lines in the preamble to your LaTeX document.
 
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -53,5 +51,4 @@ rm -rf %buildroot
 %doc Changes README README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
 
