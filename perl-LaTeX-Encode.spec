@@ -47,6 +47,8 @@ make test
 %doc Changes README README
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
+%{_bindir}/latex-encode
+%{_mandir}/man1/latex-encode.1.xz
 
 %changelog
 * Mon Apr 18 2011 Funda Wang <fwang@mandriva.org> 0.30.0-2mdv2011.0
