@@ -12,6 +12,7 @@ Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/LaTeX/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
+BuildRequires: perl(Carp::Always)
 BuildRequires: perl(Readonly)
 BuildRequires:	perl(Test::More)
 BuildArch:	noarch
